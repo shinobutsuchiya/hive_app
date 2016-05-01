@@ -1,0 +1,6 @@
+<%= link_to '新規作成', new_user_path %>
+<ul>
+    <% @users.each do |users| %>
+    <li><%= link_to users.name, user_path(users.id) %> | <%= users.email%> <%= users.profile%></li>
+    <% end %>
+</ul>

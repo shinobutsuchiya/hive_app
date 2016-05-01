@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#top'
-
+  
+  resources :users
+  #get '/users' => 'users#index'
+  #get '/users/new' => 'users#new',as: :users_path
+  #get '/users/:id' => 'users#show'
+  
+  post '/users' => 'users#create'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -53,9 +60,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
-
-group :production do
-  gem 'pg', '0.17.1'
-  gem 'rails_12factor', '0.0.2'
 end
